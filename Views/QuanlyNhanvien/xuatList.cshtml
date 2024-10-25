@@ -1,0 +1,103 @@
+﻿@model IEnumerable<KT1_BuiQuangThang_2021600262.Models.Nhanvien>
+@{
+    ViewBag.Title = "xuatList";
+}
+
+<h2>Danh sach nhan vien</h2>
+<table border="1" class="table">
+    <thead>
+        <tr>
+            <th>Ma nv</th>
+            <th>Ho ten</th>
+            <th>Dia chi</th>
+            <th>So ngay lam</th>
+            <th>Luong ngay</th>
+            <th>Tien luong</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var nhanvien in Model)
+        {
+            <tr>
+                <td>@nhanvien.manv</td>
+                <td>@nhanvien.hoten</td>
+                <td>@nhanvien.diachi</td>
+                <td>@nhanvien.songaylam</td>
+                <td>@nhanvien.luongngay</td>
+                <td>@nhanvien.tienluong</td>
+            </tr>
+
+
+
+        }
+    </tbody>
+</table>
+
+<h2>Danh sach nhan vien co so ngay lam < 20</h2>
+<table border="1" class="table">
+    <thead>
+        <tr>
+            <th>Ma nv</th>
+            <th>Ho ten</th>
+            <th>Dia chi</th>
+            <th>So ngay lam</th>
+            <th>Luong ngay</th>
+            <th>Tien luong</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var nhanvien in Model)
+        {
+            if (nhanvien.songaylam < 20)
+            {
+                <tr>
+                    <td>@nhanvien.manv</td>
+                    <td>@nhanvien.hoten</td>
+                    <td>@nhanvien.diachi</td>
+                    <td>@nhanvien.songaylam</td>
+                    <td>@nhanvien.luongngay</td>
+                    <td>@nhanvien.tienluong</td>
+                </tr>
+            }
+
+
+
+        }
+    </tbody>
+</table>
+
+
+<h2>Danh sach nhan vien co luong ngay > 190000</h2>
+<table border="1" class="table">
+    <thead>
+        <tr>
+            <th>Ma nv</th>
+            <th>Ho ten</th>
+            <th>Dia chi</th>
+            <th>So ngay lam</th>
+            <th>Luong ngay</th>
+            <th>Tien luong</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var nhanvien in Model)
+        {
+            if (nhanvien.luongngay > 190000)
+            {
+                <tr>
+                    <td>@nhanvien.manv</td>
+                    <td>@nhanvien.hoten</td>
+                    <td>@nhanvien.diachi</td>
+                    <td>@nhanvien.songaylam</td>
+                    <td>@nhanvien.luongngay</td>
+                    <td>@nhanvien.tienluong</td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>

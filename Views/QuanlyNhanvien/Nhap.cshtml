@@ -1,0 +1,47 @@
+﻿@model KT1_BuiQuangThang_2021600262.Models.Nhanvien
+@{
+    ViewBag.Title = "Nhap";
+}
+
+@{
+    IEnumerable<string> strlist = new List<string> { "Ha Noi", "Hai Phong", "Quang Ninh" };
+}
+
+@using (Html.BeginForm("xuatList", "QuanlyNhanvien"))
+{
+    
+<table border="1" class="table">
+    <tr >
+        <td colspan="2" class="text-center lead bg-primary">Nhap thong tin nhan vien</td>
+    </tr>
+    <tr>
+        <th>Ma Nhan Vien</th>
+        <td>@Html.TextBox("manv", null, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <th>Ho ten</th>
+        <td>@Html.TextBox("hoten", null, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <th>Dia chi</th>
+        <td>@Html.DropDownList("ddldiachi", new SelectList(strlist,strlist.FirstOrDefault()),"--chon dia chi--",new { @class="form-control"})</td>
+    </tr>
+    <tr>
+        <th>So ngay lam</th>
+        <td>@Html.TextBox("songaylam", null, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <th>Luong ngay</th>
+        <td>@Html.TextBox("luongngay", null, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="Nhap" name="sb" class="btn-primary center-block form-control"/>
+        </td>
+    </tr>
+
+
+</table>
+}
+
+
